@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{ISO8601} [%level] [%thread] %logger{10}.%M\(%F:%L{}\) - %msg%n</pattern>
+            <immediateFlush>false</immediateFlush>
+        </encoder>
+    </appender>
+
+    <logger name="io.gatling.http.ahc" level="${HTTP_LOG_LEVEL}"/>
+    <logger name="io.gatling.http.request" level="${HTTP_LOG_LEVEL}"/>
+    <logger name="io.gatling.http.response" level="${HTTP_LOG_LEVEL}"/>
+
+    <root level="${LOG_LEVEL}">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
