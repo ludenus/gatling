@@ -11,8 +11,9 @@ trait Config {
 class TestConfig {
   @BeanProperty var loadProfile: LoadProfile = null
   @BeanProperty var spark: Spark = null
+  @BeanProperty var echo: Echo = null
 
-  override def toString = s"TestConfig(loadProfile=$loadProfile, spark=$spark)"
+  override def toString = s"TestConfig(loadProfile=$loadProfile, spark=$spark, echo=$echo)"
 }
 
 class LoadProfile {
@@ -28,7 +29,12 @@ class LoadProfile {
 class Spark {
   @BeanProperty var host = "localhost"
   @BeanProperty var port = 8080
-
-
   override def toString = s"Spark(host=$host, port=$port)"
+}
+
+class Echo {
+  @BeanProperty var host = "localhost"
+  @BeanProperty var port = 8111
+
+  override def toString = s"Echo(host=$host, port=$port)"
 }
