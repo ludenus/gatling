@@ -1,0 +1,9 @@
+---
+version: "2"
+services:
+  wiremock:
+    image: "ludenus/pong:0.0.1"
+    ports:
+      - "8111:80"
+    environment:
+      CMD_PORT: "80"
